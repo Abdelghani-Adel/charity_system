@@ -107,7 +107,9 @@ const columns: MUIDataTableColumnDef[] = [
 
 export default function IndigentsTable() {
   const router = useRouter();
-  const [indigentList, setIndigentList] = useState<IApiRes_GetAllIndigents[]>([]);
+  const [indigentList, setIndigentList] = useState<IApiRes_GetAllIndigents[]>(
+    []
+  );
 
   useEffect(() => {
     async function fetchIndigents() {
@@ -120,6 +122,8 @@ export default function IndigentsTable() {
   const onRowClick = (row: string[], meta: any) => {
     router.push(`/indigents/${row[row.length - 1]}`);
   };
+
+  //
 
   return (
     <MUIDatatable
